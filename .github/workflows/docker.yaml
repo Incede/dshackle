@@ -5,13 +5,12 @@ on:
     branches:
       - master
 
-permissions:
-  id-token: write
-  contents: read
-
 jobs:
   docker:
     name: Build and push docker image
+    permissions:
+      id-token: write
+      contents: read
     runs-on: ubuntu-latest
     environment: ${{ github.ref_name }}
 
